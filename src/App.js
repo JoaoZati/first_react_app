@@ -2,6 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  var text_h2 = "Texto escrito no javascript";
+  var lst_text_h2 = text_h2.split(' ')
+
+  const rows_p = [];
+  for (let i = 0; i < lst_text_h2.length; i++) {
+    rows_p.push(<p>{lst_text_h2[i]}</p>)
+  }
+
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +28,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <body>
+        <h1>Teste</h1>
+        <h2>{text_h2}</h2>
+        {rows_p}
+      </body>
     </div>
   );
 }
