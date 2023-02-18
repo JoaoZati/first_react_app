@@ -1,16 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import LargeText from './components/LargeText';
+import CounterBottom from './components/counterBottom';
 
 function App() {
   var text_h2 = "Texto escrito no javascript";
-  var lst_text_h2 = text_h2.split(' ')
+  var data_large_text = {
+    'key_dct_1': 'value_dct_1',
+    'key_dct_2': 'value_dct_2',
+    'key_dct_3': 'value_dct_3',
+  };
+  var lst_text_h2 = text_h2.split(' ');
 
   const rows_p = [];
   for (let i = 0; i < lst_text_h2.length; i++) {
-    rows_p.push(<p>{lst_text_h2[i]}</p>)
-  }
+    rows_p.push(<p>{lst_text_h2[i]}</p>);
+  };
 
-
+  var counter = 0;
 
   return (
     <div className="App">
@@ -32,6 +39,14 @@ function App() {
         <h1>Teste</h1>
         <h2>{text_h2}</h2>
         {rows_p}
+
+        <h1>Teste Large Text</h1>
+        <LargeText text="randon text" text_2="randon_key_2"/>
+        <LargeText {...data_large_text}/>
+
+        <h1>Couter Bottom</h1>
+        <button onClick={() => counter += 1}>CounterBottom</button>
+        <CounterBottom counter={counter}/>
       </body>
     </div>
   );
