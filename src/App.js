@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import LargeText from './components/LargeText';
@@ -17,7 +18,12 @@ function App() {
     rows_p.push(<p>{lst_text_h2[i]}</p>);
   };
 
-  var counter = 0;
+  const [counter, setCounter] = useState(0);
+
+  function onClickHandler(){
+    console.log(counter);
+    setCounter(counter + 1);
+  };
 
   return (
     <div className="App">
@@ -45,7 +51,7 @@ function App() {
         <LargeText {...data_large_text}/>
 
         <h1>Couter Bottom</h1>
-        <button onClick={() => counter += 1}>CounterBottom</button>
+        <button onClick={onClickHandler}>CounterBottom</button>
         <CounterBottom counter={counter}/>
       </body>
     </div>
