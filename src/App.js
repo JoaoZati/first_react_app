@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import LargeText from './components/LargeText';
 import CounterBottom from './components/counterBottom';
+import ButtonComponent from './components/buttonComponent';
 
 function App() {
   var text_h2 = "Texto escrito no javascript";
@@ -18,6 +19,7 @@ function App() {
     rows_p.push(<p>{lst_text_h2[i]}</p>);
   };
 
+  const button_text = "Counter Click"
   const [counter, setCounter] = useState(0);
 
   function onClickHandler(){
@@ -26,6 +28,7 @@ function App() {
   };
 
   return (
+    // Here comes JXS
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -51,7 +54,8 @@ function App() {
         <LargeText {...data_large_text}/>
 
         <h1>Couter Bottom</h1>
-        <button onClick={onClickHandler}>CounterBottom</button>
+        {/* <button onClick={onClickHandler}>CounterBottom</button> */}
+        <ButtonComponent button_text={button_text} onClick={onClickHandler} />
         <CounterBottom counter={counter}/>
       </body>
     </div>
